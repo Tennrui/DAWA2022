@@ -21,7 +21,7 @@ function cambiaValores() {
         contraseña +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
     }
     inputNombre.value = contraseña;
-    document.getElementById("demo").style.color = "red";
+    //document.getElementById("demo").style.color = "red";
 }
 </script>
 

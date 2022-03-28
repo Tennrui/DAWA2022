@@ -8,7 +8,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!------ Include the above in your HEAD tag ---------->
+<script type="text/javascript">
+window.addEventListener("load", cargaPagina);
+function cargaPagina() {
+    var btn = document.getElementById("demo").addEventListener("click", cambiaValores);
+}
 
+function cambiaValores() {
+    var inputNombre = document.getElementById("Facturar");
+    var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+    var contraseña = "";
+    for (i=0; i<20; i++){
+        contraseña +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
+    }
+    inputNombre.value = contraseña;
+    document.getElementById("demo").style.color = "red";
+}
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,8 +172,8 @@
                      <!--buscar como generar un codigo por javascript y colocarlo dentro del input-->
                     <div class=" form-group" id="Factura">
                         <div class="input-group-append col-auto text-center">
-                              <input id="Factura" name="Factura" type="text" placeholder="Codigo.factura.generado" class="form-control" >
-                              <input name = "Generador" value="Generar" type="button" class=" btn button">
+                              <input id="Facturar" name="Factura" type="text" placeholder="Codigo.factura.generado" class="form-control" >
+                              <input id ="demo" name = "Generador" value="Generar" type="button" class=" btn button">
                           <!--<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>-->
                         </div>
                     </div>
