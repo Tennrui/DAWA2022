@@ -7,10 +7,28 @@
 <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../js/jquery-3.6.0.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+<script type="text/javascript">
+window.addEventListener("load", cargaPagina);
+function cargaPagina() {
+    var btn = document.getElementById("demo").addEventListener("click", cambiaValores);
+}
+
+function cambiaValores() {
+    var inputNombre = document.getElementById("Facturar");
+    var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+    var contraseña = "";
+    for (i=0; i<20; i++){
+        contraseña +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
+    }
+    inputNombre.value = contraseña;
+    document.getElementById("demo").style.color = "red";
+}
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -157,8 +175,8 @@
                      <!--buscar como generar un codigo por javascript y colocarlo dentro del input-->
                     <div class=" form-group" id="Factura">
                         <div class="input-group-append col-auto text-center">
-                              <input id="Factura" name="Factura" type="text" placeholder="Codigo.factura.generado" class="form-control" >
-                              <input name = "Generador" value="Generar" type="button" class=" btn button">
+                              <input id="Facturar" name="Factura" type="text" value ="" placeholder="Codigo.factura.generado" class="form-control" >
+                              <button id="demo" name = "Generador" type="button" class=" btn button">Generar</button>
                           <!--<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>-->
                         </div>
                     </div>

@@ -20,7 +20,7 @@
             $resultado = intval($query[0]);
             switch ($resultado) {
                 case '1':
-                    header("location:../MenusHtml/Administrador.html");
+                    header("location:../MenusHtml/MenuAdministrador.html");
                     break;
                 case '2':
                     header("location:../MenusHtml/MenuCliente.html");
@@ -36,7 +36,7 @@
                     break;
             }
         }else{
-            header("location:../MenusHtml/indexi.html"");
+            header("location:../MenusHtml/indexi.html");
         }
     }
 ?>
