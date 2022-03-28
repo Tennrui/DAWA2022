@@ -78,11 +78,11 @@
                 echo"<div class='table-responsive-lg'>";
                 echo "<table border= '2' class='table table-hover table-dark text-center'>";
                 echo "<thead>";
-                echo "<tr><th>ID</th><th>Marca del Vehiculo</th><th>Color del vehiculo</th><th>Precio por Unidad</th><th>Cantidad</th>";
+                echo "<tr><th>Numero de Serie</th><th>Marca del Vehiculo</th><th>Color del vehiculo</th><th>Precio por Unidad</th><th>Cantidad</th>";
                 echo"</thead>";
                 while($fila = mysqli_fetch_assoc($resultado)){
                     echo "<tr >";
-                    echo "<td>".$fila['num_serie']."</td>";
+                    echo "<td>".$fila['Num_serie' ]."</td>";
                     echo "<td>".$fila['marca_vehiculo']."</td>";
                     echo "<td>".$fila['color_vehiculo']."</td>";
                     echo "<td>".$fila['precio_vehiculo']."</td>";

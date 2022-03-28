@@ -1,5 +1,11 @@
+<script type="text/javascript">
+ function MiFuncionJS(){ 
+    alert('Insertado con éxito');
+    history.back();
+    }
+</script>
 <?php
-    if(isset($_POST['Registrarse'])){
+    if(isset($_POST['Registrar'])){
         $Nombre = $_POST['name'];
         $psw = $_POST['password'];
         $email = $_POST['email'];
@@ -17,7 +23,9 @@
             $query = "INSERT INTO usuarios(nombre_usuario,pass_usuario,tipo_usuario,correo_usuario) VALUE('$Nombre','$psw','2','$email')";
             //Ejecutar la consulta
             $resultado = mysqli_query($conn,$query) or die ("Error: ¡Usuario ya existente!");
-            echo "<p>Insertado con éxito</p>";
+            echo "<script>";
+            echo "MiFuncionJS();";
+            echo "</script>";
             mysqli_close($conn);
         }else{
             echo "<p>Falto informacion</p>";

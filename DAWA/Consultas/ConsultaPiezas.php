@@ -70,13 +70,14 @@
                 echo"<div class='table-responsive-lg'>";
                 echo "<table border= '2' class='table table-hover table-dark text-center'>";
                 echo "<thead>";
-                echo "<tr><th>Nombre de la pieza</th><th>Cantidad de piezas</th><th>Costo de la pieza</th>";
+                echo "<tr><th>Nombre de la pieza</th><th>Cantidad de piezas</th><th>Costo de la pieza</th><th>Numero de Serie</th>";
                 echo"</thead>";
                 while($fila = mysqli_fetch_assoc($resultado)){
                     echo "<tr >";
                     echo "<td>".$fila['nombre_pieza']."</td>";
                     echo "<td>".$fila['cantidad_pieza']."</td>";
                     echo "<td>".$fila['costo_pieza']."</td>";
+                    echo "<td>".$fila['Num_serie']."</td>";
                     echo "</tr>";
                 }
                 echo "</table>";

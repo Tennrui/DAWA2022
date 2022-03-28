@@ -1,29 +1,28 @@
 <script type="text/javascript">
  function MiFuncionJS(){ 
     alert('Insertado con éxito');
-    history.back();
+    history.back();//Checar esto 
     }
 </script>
+
 <?php
-    if(isset($_POST['Facturar'])){
-        $id = $_POST['Factura'];
-        $fecha = $_POST['fechafactura'];
-        $total = $_POST['Total'];
-        $cliente = $_POST['Cliente'];
-       
+    if(isset($_POST['Eliminar'])){
+        $psw = $_POST['password'];
+        $email = $_POST['email'];
+
         $server = "localhost";
         $user = "user1";
         $pass = "12345";
         $basedatos = "ag_autos";
-        if($id != "" || $fecha != "" || $total != "" || $cliente != ""){
+        if($psw != "" && $email != ""){
             //Conectar al manejador de BD
             $conn = mysqli_connect($server, $user, $pass) or die("Error: No se pudo conectar");
             //establecer conexion con BD
             mysqli_select_db($conn, $basedatos) or die("Error no se ha encontrado la base de datos");
             //Consulta SQL que muestra el contenido de una tabla
-            $query = "INSERT INTO facturas(id_factura,fecha_factura,costo_total,nom_cliente) VALUE('$id','$fecha','$total','$cliente')";
+            $query = "DELETE FROM usuarios WHERE correo_usuario = '$email' AND pass_usuario = '$psw'";
             //Ejecutar la consulta
-            $resultado = mysqli_query($conn,$query) or die ("Error: ¡Usuario ya existente!");
+            $resultado = mysqli_query($conn,$query) or die ("Error:No se pudo ejecutar la consulta");
             echo "<script>";
             echo "MiFuncionJS();";
             echo "</script>";

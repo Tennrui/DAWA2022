@@ -117,7 +117,7 @@ function cambiaValores() {
                     echo"<div class='form-row justify-content-center h-100'>";
                     echo"<div class='card input'>";
                     echo"<div class='well well-sm card-body'>";
-                    echo"<form action='ActulizarTP.php' class='form-horizontal' method='post'>";
+                    echo"<form action='../UpdateForm/ActualizarTP.php' class='form-horizontal' method='post'>";
                     echo"<div class='form-group mb-3 '>";
                     echo"<div class='col-auto text-center'>";   
                     echo "<select required class='form-control' id='id' name = 'id'>";
@@ -155,7 +155,7 @@ function cambiaValores() {
                     </div>
                     <div class=" form-group" id="Costo">
                         <div class="input-group-append col-auto text-center">
-                                <input id="costo" name="Costo" type="number" placeholder="Costo" class="form-control" min="1" required>
+                                <input id="costo" name="Costo" type="number" placeholder="Costo" class="form-control" step="any" min="1" required>
                                 <!--<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>--->
                         </div>
                     </div>
@@ -163,7 +163,7 @@ function cambiaValores() {
                     <div class=" form-group" id="Factura">
                         <div class="input-group-append col-auto text-center">
                               <input id="Facturar" name="Factura" type="text" placeholder="Codigo.factura.generado" class="form-control" >
-                              <input id="demo" name = "Generador" value="Generar" type="button" class=" btn button">
+                              <button id="demo" name = "Generador" type="button" class=" btn button">Generar</button>
                           <!--<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>-->
                         </div>
                     </div>

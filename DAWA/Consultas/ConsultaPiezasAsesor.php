@@ -86,7 +86,7 @@
                     echo "<td>".$fila['nombre_pieza']."</td>";
                     echo "<td>".$fila['cantidad_pieza']."</td>";
                     echo "<td>".$fila['costo_pieza']."</td>";
-                    echo "<td>".$fila['num_serie']."</td>";
+                    echo "<td>".$fila['Num_serie']."</td>";
                     echo "</tr>";
                 }
                 echo "</table>";

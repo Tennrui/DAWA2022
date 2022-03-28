@@ -104,7 +104,7 @@
                     echo"<div class='form-row justify-content-center h-100'>";
                     echo"<div class='card input'>";
                     echo"<div class='well well-sm card-body'>";
-                    echo"<form action='../UpdateForm/ActulizarTU.php' class='form-horizontal' method='post'>";
+                    echo"<form action='../UpdateForm/ActualizarTU.php' class='form-horizontal' method='post'>";
                     echo"<div class='form-group mb-3 '>";
                     echo"<div class='col-auto text-center'>";   
                     echo "<select required class='form-control' id='id' name = 'id'>";
@@ -129,7 +129,7 @@
                     </div>
                     <div class=" form-group" id="Num_Serie">
                         <div class="input-group-append col-auto text-center">
-                                <input id="nombre_usuario" name="nombre" type="text" placeholder="nombre_usuario" class="form-control" required>
+                                <input id="nombre_usuario" name="nombre_usuario" type="text" placeholder="nombre_usuario" class="form-control" required>
                                 <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                     </div>
                     <div class=" form-group" id="Costo">
                         <div class="input-group-append col-auto text-center">
-                                <input id="tipo" name="tipo" type="number" placeholder="Tipo" class="form-control" min="1" required>
+                                <input id="tipo" name="tipo" type="number" placeholder="Tipo" class="form-control" min="1" max="4" required>
                                 <span class="input-group-text"><i class="fa fa-id-card"></i></span>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
 
                     <div class="form-group">
                         <div class="col-md-12 text-center">
-                            <input name = "Baja" value="Actualizar" type="submit" class=" btn btn-dark btn-lg ">
+                            <input name = "Actualizar" value="Actualizar" type="submit" class=" btn btn-dark btn-lg ">
                         </div>
                     </div>
 
