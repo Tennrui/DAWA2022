@@ -46,7 +46,7 @@
                         <form action="../FormulariosPhp/AltaCita.php" class="form-horizontal" method="post">
                             <div class="form-group mb-3 ">
                                     <div class="col-auto text-center">
-                                        <select required class="form-control" name="motivoCita" id="mtc" >
+                                        <select required class="form-control" id="motivoCita" name="motivoCita" >
                                             <option selected="true" disabled="disabled">Motivo de Cita</option>
                                             <option value="PruebadeManejo">Prueba de Manejo</option>
                                             <option value="CitaconAsesor">Cita con Asesor</option>
@@ -58,14 +58,14 @@
 
                                 <div class="input-group mb-3 "id=" CalendarioA">
                                     <div class="input-group date  col-12 text-center" id="date">
-                                        <input type="date" class="form-control" required/>
+                                        <input id = "date" name = "date" type="date" class="form-control" required/>
                                         <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
                 
                                 <div class="md-form md-outline">
                                     <div class="col-auto text-center">
-                                        <input type="time" id="default-picker" class="form-control" placeholder="Select time" required>
+                                        <input name = "time" type="time" id="time" class="form-control" placeholder="Select time" required>
                                     </div>
                                 </div>
 
@@ -73,7 +73,7 @@
 
                                 <div class="form-group">
                                     <div class="input-group-append col-auto text-center">
-                                        <input id="responsable" name="Responsable" type="text" placeholder="Responsable" class="form-control" required>
+                                        <input id="responsable" name="responsable" type="text" placeholder="Responsable" class="form-control" required>
                                         <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
                                     </div>
                                 </div>

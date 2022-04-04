@@ -4,25 +4,28 @@
     history.back();
     }
 </script>
-<?php//Pendiente a terminar
+<?php
     if(isset($_POST['Agendar'])){
-        $id = $_POST['id'];
-        $Nombre = $_POST['nombre_usuario'];
-        $psw = $_POST['pass'];
-        $tipo = $_POST['tipo'];
-        $email = $_POST['correo'];
+        $mtc = $_POST['motivoCita'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+        $resp = $_POST['responsable'];
+        $usuario = $_POST['id_usuario'];
 
         $server = "localhost";
         $user = "user1";
         $pass = "12345";
         $basedatos = "ag_autos";
-        if($Nombre != "" || $psw != "" || $email != ""){
+
+        //echo "<p> $mtc , $date , $time , $resp , $usuario </p> ";
+
+        if($mtc != "" || $date != "" || $resp != "" || $time != "" || $user != ""){
             //Conectar al manejador de BD
             $conn = mysqli_connect($server, $user, $pass) or die("Error: No se pudo conectar");
             //establecer conexion con BD
             mysqli_select_db($conn, $basedatos) or die("Error no se ha encontrado la base de datos");
             //Consulta SQL que muestra el contenido de una tabla
-            $query = "UPDATE usuarios SET nombre_usuario = '$Nombre', pass_usuario = '$psw', tipo_usuario = '$tipo', correo_usuario = '$email' WHERE id_usuario = $id";
+            $query = "INSERT INTO citas (motivo_cita,fecha_cita,responsable_cita,hora_cita,id_usuario) VALUE('$mtc','$date','$resp','$time','$usuario')";
             //Ejecutar la consulta
             $resultado = mysqli_query($conn,$query) or die ("Error:No se pudo ejecutar la consulta");
             echo "<script>";
@@ -33,3 +36,4 @@
             echo "<p>Falto informacion</p>";
         }
     }
+?>

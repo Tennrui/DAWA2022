@@ -36,7 +36,7 @@
                     break;
             }
         }else{
-            header("location:../MenusHtml/indexi.html");
+            header("location:../MenusHtml/index_i.html");
         }
     }
 ?>

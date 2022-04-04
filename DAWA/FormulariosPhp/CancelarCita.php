@@ -4,25 +4,23 @@
     history.back();
     }
 </script>
-<?php//Pendiente a terminar
-    if(isset($_POST['Actualizar'])){
-        $id = $_POST['id'];
-        $Nombre = $_POST['nombre_usuario'];
-        $psw = $_POST['pass'];
-        $tipo = $_POST['tipo'];
-        $email = $_POST['correo'];
-
+<?php
+    if(isset($_POST['Baja'])){
+        $id = $_POST['id_user'];
+        $resp = $_POST['responsable'];
+        $date = $_POST['date'];
+        //echo $resp, $id, $date;
         $server = "localhost";
         $user = "user1";
         $pass = "12345";
         $basedatos = "ag_autos";
-        if($Nombre != "" || $psw != "" || $email != ""){
+        if($id != "" || $resp != "" || $date != ""){
             //Conectar al manejador de BD
             $conn = mysqli_connect($server, $user, $pass) or die("Error: No se pudo conectar");
             //establecer conexion con BD
             mysqli_select_db($conn, $basedatos) or die("Error no se ha encontrado la base de datos");
             //Consulta SQL que muestra el contenido de una tabla
-            $query = "UPDATE usuarios SET nombre_usuario = '$Nombre', pass_usuario = '$psw', tipo_usuario = '$tipo', correo_usuario = '$email' WHERE id_usuario = $id";
+            $query = "DELETE FROM citas WHERE id_usuario = '$id' AND fecha_cita = '$date'";
             //Ejecutar la consulta
             $resultado = mysqli_query($conn,$query) or die ("Error:No se pudo ejecutar la consulta");
             echo "<script>";
@@ -33,3 +31,4 @@
             echo "<p>Falto informacion</p>";
         }
     }
+?>
