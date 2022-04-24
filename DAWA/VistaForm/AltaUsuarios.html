@@ -33,7 +33,7 @@
                     <li class="nav-item"> <a  class="nav-link" href="../MenusHtml/MenuAdministrador.html">Inicio</a> </li>
                     <li class="nav-item active"> <a class="nav-link" href="../VistaForm/AltaUsuarios.html">Alta de Usuarios</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../Consultas/ConsultaUsuarios.php">Ver Usuarios</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="../VistaForm/EliminarUsuario.html">Eliminar Usuarios</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="../VistaForm/EliminarUsuario.php">Eliminar Usuarios</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../VistaForm/ActualizarUsuario.php">Actualizar Usuarios</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../MenusHtml/index.html"> Cerrar sesion</a> </li>
                 </ul>
@@ -45,39 +45,45 @@
         <div class="form-row justify-content-center h-100">
             <div class="card input">
                 <div class="well well-sm card-body">
-                        <form action="../FormulariosPhp/nuevo_usuario.php" class="form-horizontal" method="post">
+                        <form action="../FormulariosPhp/nuevo_tipo_user.php" class="form-horizontal" method="post">
 
                                 <div class="form-group">
                                     <div class="input-group-append col-auto text-center">
-                                        <input required id="name_a" name="name_a" type="text" placeholder="Nombre" class="form-control">
+                                        <input required id="name_a" name="name_a" type="text" placeholder="Nombre" class="form-control" required>
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
                                 </div>
 
-                                <div class="input-group mb-3 "id=" Usuario">
+                                <!--<div class="input-group mb-3 "id=" Usuario">
                                     <div class="input-group date  col-12 text-center" id="date">
-                                        <input required id="name" name="name" type="text" placeholder="Usuario" class="form-control">
+                                        <input required id="name" name="name" type="text" placeholder="Usuario" class="form-control" required>
                                         <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <div class="form-group">
                                     <div class=" input-group-append col-auto text-center">
-                                        <input required id="email" name="email" type="email" placeholder="Correo electronico" class="form-control">
+                                        <input required id="email" name="email" type="email" placeholder="Correo electronico" class="form-control" required>
+                                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class=" input-group-append col-auto text-center">
+                                        <input required id="tipo" name="tipo" type="number" placeholder="Tipo de usuario" class="form-control" min = "2" max="4" required>
                                         <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group-append col-auto text-center">
-                                        <input required id="password" name="password" type="password" placeholder="contrase&ntilde;a" class="form-control">
+                                        <input required id="password" name="password" type="password" placeholder="contrase&ntilde;a" class="form-control" required>
                                         <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group-append col-auto text-center">
-                                          <input required id="password_confirm" name="password_confirm" type="password" placeholder="Confirmar Contrase&ntilde;a" class="form-control">
+                                          <input required id="password_confirm" name="password_confirm" type="password" placeholder="Confirmar Contrase&ntilde;a" class="form-control" required>
                                         <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
                                     </div>
                                 </div>

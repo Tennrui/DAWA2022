@@ -1,14 +1,19 @@
 <script type="text/javascript">
  function MiFuncionJS(){ 
-    alert('Insertado con éxito');
+    alert('Eliminado con exito');
+    history.back();//Checar esto 
+    }
+
+    function Verificacion(){ 
+    alert('El usuario que se desea eliminar no existe');
     history.back();//Checar esto 
     }
 </script>
 
 <?php
     if(isset($_POST['Eliminar'])){
-        $psw = $_POST['password'];
-        $email = $_POST['email'];
+        $psw = $_POST['pass'];
+        $email = $_POST['id'];
 
         $server = "localhost";
         $user = "user1";
@@ -19,10 +24,12 @@
             $conn = mysqli_connect($server, $user, $pass) or die("Error: No se pudo conectar");
             //establecer conexion con BD
             mysqli_select_db($conn, $basedatos) or die("Error no se ha encontrado la base de datos");
-            //Consulta SQL que muestra el contenido de una tabla
+
             $query = "DELETE FROM usuarios WHERE correo_usuario = '$email' AND pass_usuario = '$psw'";
             //Ejecutar la consulta
+           
             $resultado = mysqli_query($conn,$query) or die ("Error:No se pudo ejecutar la consulta");
+           
             echo "<script>";
             echo "MiFuncionJS();";
             echo "</script>";
@@ -31,4 +38,4 @@
             echo "<p>Falto informacion</p>";
         }
     }
-?>
+?> 

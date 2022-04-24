@@ -1,6 +1,6 @@
 <script type="text/javascript">
  function MiFuncionJS(){ 
-    alert('Insertado con éxito');
+    alert('Cita cancelada con éxito');
     history.back();
     }
 </script>
@@ -9,12 +9,12 @@
         $id = $_POST['id_user'];
         $resp = $_POST['responsable'];
         $date = $_POST['date'];
-        //echo $resp, $id, $date;
+
         $server = "localhost";
         $user = "user1";
         $pass = "12345";
         $basedatos = "ag_autos";
-        if($id != "" || $resp != "" || $date != ""){
+        if($id != "" || $resp != "" || $date != ""){ 
             //Conectar al manejador de BD
             $conn = mysqli_connect($server, $user, $pass) or die("Error: No se pudo conectar");
             //establecer conexion con BD
@@ -30,5 +30,5 @@
         }else{
             echo "<p>Falto informacion</p>";
         }
-    }
-?>
+    } 
+?> 

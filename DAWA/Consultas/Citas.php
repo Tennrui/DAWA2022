@@ -79,13 +79,14 @@
                 echo"<div class='table-responsive-lg'>";
                 echo "<table border= '2' class='table table-hover table-dark text-center'>";
                 echo "<thead>";
-                echo "<tr><th>ID</th><th>Motivo de la Cita</th><th>Fecha</th><th>Agente</th>";
+                echo "<tr><th>ID</th><th>Motivo de la Cita</th><th>Fecha</th><th>Hora</th><th>Agente</th>";
                 echo"</thead>";
                 while($fila = mysqli_fetch_assoc($resultado)){
                     echo "<tr >";
                     echo "<td>".$fila['id_cita']."</td>";
                     echo "<td>".$fila['motivo_cita']."</td>";
                     echo "<td>".$fila['fecha_cita']."</td>";
+                    echo "<td>".$fila['hora_cita']."</td>";
                     echo "<td>".$fila['responsable_cita']."</td>";
                     echo "</tr>";
                 }

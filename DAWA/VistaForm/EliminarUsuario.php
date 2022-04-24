@@ -35,22 +35,15 @@
                 $.ajax({
     
                     type: "POST",
-                    url: "../Consultas/ObtenerUsers.php",
+                    url: "../Consultas/ObtenerUsersEliminar.php",
                     data: {"id":i},
                     dataType: "json",
                     success: function(data){
-                    var nombre_usuario = data[0];
-                    var pass_usuario = data[1];
-                    var tipo_usuario = data[2];
-                    var correo_usuario = data[3];
-                   // alert(cantidad);
-                    $('#nombre_usuario').val(nombre_usuario);
-                    $('#pass').val(pass_usuario);
-                    $('#tipo').val(tipo_usuario);
-                    $('#correo').val(correo_usuario);
-
+                    var pass_usuario = data[0];
                     
-    
+                   // alert(cantidad);
+                    $('#pass').val(pass_usuario);
+   
                     }
                     
                 });//fin ajax
@@ -61,16 +54,16 @@
 </head>
 
 <body class ="m-0 ">
-    <!--menu-->
-    <div class="container-fluid px-0">
+  <!--menu-->
+  <div class="container-fluid px-0">
         <nav class="navbar navbar-expand-sm navbar-dark bg-black py-0 px-0"> <a class="navbar-brand"  href="#"><img id="logo" src="../img/img_log.jpg"> &nbsp;&nbsp;&nbsp;NombreAgencia</a><span class="v-line"></span> 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class=" navbar-nav nav nav-pills sm-3 " id="pills-tab" >
                     <li class="nav-item"> <a  class="nav-link" href="../MenusHtml/MenuAdministrador.html">Inicio</a> </li>
                     <li class="nav-item "> <a class="nav-link" href="../VistaForm/AltaUsuarios.html">Alta de Usuarios</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../Consultas/ConsultaUsuarios.php">Ver Usuarios</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="../VistaForm/EliminarUsuario.php">Eliminar Usuarios</a> </li>
-                    <li class="nav-item active"> <a class="nav-link" href="../UpdateForm/ActualizarUsuario.php">Actualizar Usuarios</a> </li>
+                    <li class="nav-item active"> <a class="nav-link" href="../VistaForm/EliminarUsuario.html">Eliminar Usuarios</a> </li>
+                    <li class="nav-item "> <a class="nav-link" href="../VistaForm/ActualizarUsuario.php">Actualizar Usuarios</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../MenusHtml/index.html"> Cerrar sesion</a> </li>
                 </ul>
             </div>
@@ -90,7 +83,7 @@
                 $conn = mysqli_connect($server,$user,$pass) or die ("Errror: No se pudo conectar");
                 mysqli_select_db($conn,$basedata) or die("Error: no se pudo conectar con la base de datos");
         
-                $query = "SELECT id_usuario FROM usuarios";
+                $query = "SELECT correo_usuario FROM usuarios";
                 //Ejecutar la consulta
                 $resultado = mysqli_query($conn,$query);
                 if(!$resultado) die("Error no se ha encontrado la base de datos");
@@ -104,7 +97,7 @@
                     echo"<div class='form-row justify-content-center h-100'>";
                     echo"<div class='card input'>";
                     echo"<div class='well well-sm card-body'>";
-                    echo"<form action='../UpdateForm/ActualizarTU.php' class='form-horizontal' method='post'>";
+                    echo"<form action='../FormulariosPhp/EliminarUsuario.php' class='form-horizontal' method='post'>";
                     echo"<div class='form-group mb-3 '>";
                     echo"<div class='col-auto text-center'>";   
                     echo "<select required class='form-control' id='id' name = 'id'>";
@@ -112,7 +105,7 @@
                     while($fila=mysqli_fetch_array($resultado)){
                     
                    
-                        echo "<option value=".$fila['id_usuario'].">".$fila['id_usuario']."</option>";
+                        echo "<option value=".$fila['correo_usuario'].">".$fila['correo_usuario']."</option>";
                     }
                                 
                     echo"<option value = '0' selected> Ninguno </option";
@@ -127,38 +120,18 @@
                             </select>
                         </div>
                     </div>
-                    <div class=" form-group" id="Num_Serie">
-                        <div class="input-group-append col-auto text-center">
-                                <input id="nombre_usuario" name="nombre_usuario" type="text" placeholder="nombre_usuario" class="form-control" required>
-                                <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
+                             <div class="form-group">
+                                    <div class="input-group-append col-auto text-center">
+                                    <input id="pass" name="pass" type="password" placeholder="Password" class="form-control" min="1" required>
+                                        <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                    </div>
+                            </div>
                             
-                    <div class=" form-group" id="Cantidad">
-                            <div class="input-group-append col-auto text-center">
-                                <input id="pass" name="pass" type="text" placeholder="Password" class="form-control" min="1" required>
-                                <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
-                    <div class=" form-group" id="Costo">
-                        <div class="input-group-append col-auto text-center">
-                                <input id="tipo" name="tipo" type="number" placeholder="Tipo" class="form-control" min="1" max="4" required>
-                                <span class="input-group-text"><i class="fa fa-id-card"></i></span>
-                        </div>
-                    </div>
-                  
-                    <div class=" form-group" id="Factura">
-                        <div class="input-group-append col-auto text-center">
-                              <input id="correo" name="correo" type="email" placeholder="Correo" class="form-control" required>
-                              <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-12 text-center">
-                             <input name = "Actualizar" value="Actualizar" type="submit" class=" btn btn-dark btn-lg ">  
-                        </div>
-                    </div>
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <input name = "Eliminar" value="Eliminar" type="submit" class=" btn btn-dark btn-lg ">
+                                </div>
+                         </div>
 
                 </form>
          

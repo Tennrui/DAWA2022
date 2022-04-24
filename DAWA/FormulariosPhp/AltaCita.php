@@ -1,6 +1,6 @@
 <script type="text/javascript">
  function MiFuncionJS(){ 
-    alert('Insertado con éxito');
+    alert('Cita agendada con éxito');
     history.back();
     }
 </script>
@@ -16,10 +16,9 @@
         $user = "user1";
         $pass = "12345";
         $basedatos = "ag_autos";
+     //echo "<p> $mtc , $date , $time , $resp , $usuario </p> ";
 
-        //echo "<p> $mtc , $date , $time , $resp , $usuario </p> ";
-
-        if($mtc != "" || $date != "" || $resp != "" || $time != "" || $user != ""){
+     if($mtc != "" || $date != "" || $resp != "" || $time != "" || $user != ""){
             //Conectar al manejador de BD
             $conn = mysqli_connect($server, $user, $pass) or die("Error: No se pudo conectar");
             //establecer conexion con BD
@@ -35,5 +34,5 @@
         }else{
             echo "<p>Falto informacion</p>";
         }
-    }
-?>
+    } 
+?> 

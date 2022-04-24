@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <!--Made with love by Mutiullah Samim -->
-   
+
     <!--Bootsrap 4 CDN-
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
     <link rel="stylesheet" href="../bootstrap-4.3.1-dist/bootstrap-4.3.1-dist/css/bootstrap.css">
@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-sm navbar-dark bg-black py-0 px-0"> <a class="navbar-brand"  href="#"><img id="logo" src="../img/img_log.jpg"> &nbsp;&nbsp;&nbsp;NombreAgencia</a><span class="v-line"></span> 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class=" navbar-nav nav nav-pills sm-3 " id="pills-tab" >
-                    <li class="nav-item active"> <a  class="nav-link" href="../MenusHtml/MenuAsesor.html">Inicio</a> </li>
+                    <li class="nav-item"> <a  class="nav-link" href="../MenusHtml/MenuAsesor.html">Inicio</a> </li>
                     <li class="nav-item "> <a class="nav-link" href="../Consultas/ConsultaPiezasAsesor.php">Info. Piezas</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../Consultas/ConsultaVehiculosAsesor.php">Info. Vehiculos</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../Consultas/Citas.php">Citas Agendadas</a> </li>
@@ -42,7 +42,7 @@
                           <a class="dropdown-item" href="../Ventas/VenderVehiculosAsesor.php">Venta Vehiculos</a>
                         </ul>
                     </li>
-                    <li class="nav-item "> <a class="nav-link" href="../Consultas/ConsultaFacturas.php">Info. Facturas</a> </li>
+                    <li class="nav-item active "> <a class="nav-link" href="../Consultas/ConsultaFacturas.php">Info. Facturas</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../MenusHtml/index.html"> Cerrar sesion</a> </li>
                 </ul>
             </div>
@@ -52,7 +52,7 @@
 
             <br>
             <h1 class = "text-center text-light font-weight-bold">Consulta de facturas</h1>
-            
+
             <?php
                 $server = "localhost";
                 $user = "user1";
@@ -99,4 +99,4 @@
 
     </div>
 </body>
-</html>
+</html> 

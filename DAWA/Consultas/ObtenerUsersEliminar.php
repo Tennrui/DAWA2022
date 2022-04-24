@@ -13,7 +13,7 @@ $conn = mysqli_connect($server, $user, $pass) or die("Error: No se pudo conectar
 
 mysqli_select_db($conn, $basedatos) or die("Error no se ha encontrado la base de datos");
 
-$query = "SELECT num_serie,color_vehiculo,precio_vehiculo FROM vehiculos WHERE marca_vehiculo = '$id' ";
+$query = "SELECT pass_usuario FROM usuarios WHERE correo_usuario = '$id' ";
 
 
 $resultado = mysqli_query($conn,$query);

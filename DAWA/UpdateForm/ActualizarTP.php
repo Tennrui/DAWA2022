@@ -1,6 +1,6 @@
 <script type="text/javascript">
  function MiFuncionJS(){ 
-    alert('Insertado con éxito');
+    alert('Venta realizada exitosamente');
     history.back();
     }
 </script>

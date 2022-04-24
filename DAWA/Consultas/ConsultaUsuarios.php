@@ -33,7 +33,7 @@
                         <li class="nav-item"> <a  class="nav-link" href="../MenusHtml/MenuAdministrador.html">Inicio</a> </li>
                         <li class="nav-item"> <a class="nav-link" href="../VistaForm/AltaUsuarios.html">Alta de Usuarios</a> </li>
                         <li class="nav-item active"> <a class="nav-link" href="../Consultas/ConsultaUsuarios.php">Ver Usuarios</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="../VistaForm/EliminarUsuario.html">Eliminar Usuarios</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="../VistaForm/EliminarUsuario.php">Eliminar Usuarios</a> </li>
                         <li class="nav-item"> <a class="nav-link" href="../VistaForm/ActualizarUsuario.php">Actualizar Usuarios</a> </li>
                         <li class="nav-item"> <a class="nav-link" href="../MenusHtml/index.html"> Cerrar sesion</a> </li>
                     </ul>
@@ -73,7 +73,7 @@
                 echo"</thead>";
                 while($fila = mysqli_fetch_assoc($resultado)){
                     echo "<tr >";
-                    echo "<td>".$fila['id_usuario']."</td>";
+                    echo "<td>".$fila['Id_usuario']."</td>";
                     echo "<td>".$fila['nombre_usuario']."</td>";
                     echo "<td>".$fila['pass_usuario']."</td>";
                     echo "<td>".$fila['tipo_usuario']."</td>";
@@ -87,8 +87,6 @@
             echo"</div>";
             echo"</div>";
             ?>
-
-
     </div>
 </body>
 </html>

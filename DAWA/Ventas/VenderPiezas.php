@@ -7,21 +7,21 @@
 <script type="text/javascript" src="../js/jquery-3.6.0.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <script type="text/javascript">
-window.addEventListener("load", cargaPagina);
-function cargaPagina() {
-    var btn = document.getElementById("demo").addEventListener("click", cambiaValores);
-}
-
-function cambiaValores() {
-    var inputNombre = document.getElementById("Facturar");
-    var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
-    var contraseña = "";
-    for (i=0; i<20; i++){
-        contraseña +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
+    window.addEventListener("load", cargaPagina);
+    function cargaPagina() {
+        var btn = document.getElementById("demo").addEventListener("click", cambiaValores);
     }
-    inputNombre.value = contraseña;
-    //document.getElementById("demo").style.color = "red";
-}
+
+    function cambiaValores() {
+        var inputNombre = document.getElementById("Facturar");
+        var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+        var contraseña = "";
+        for (i=0; i<20; i++){
+            contraseña +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
+        }
+        inputNombre.value = contraseña;
+        document.getElementById("demo").style.color = "red";
+    }
 </script>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,7 +79,7 @@ function cambiaValores() {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class=" navbar-nav nav nav-pills sm-3 " id="pills-tab" >
                     <li class="nav-item"> <a  class="nav-link" href="../MenusHtml/MenuVendedor.html">Inicio</a> </li>
-                    <li class="nav-item active"> <a class="nav-link" href="../Ventas/VenderPiezas.php">Vender Piezas</a> </li>
+                    <li class="nav-item active"> <a class="nav-link" href="../UpdateForm/ActualizarTP.php">Vender Piezas</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../Ventas/VenderVehiculos.php">Vender Vehiculos</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../Consultas/ConsultaPiezas.php">Ver Piezas</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="../Consultas/ConsultaVehiculos.php">Ver Vehiculos</a> </li>
@@ -155,15 +155,15 @@ function cambiaValores() {
                     </div>
                     <div class=" form-group" id="Costo">
                         <div class="input-group-append col-auto text-center">
-                                <input id="costo" name="Costo" type="number" placeholder="Costo" class="form-control" step="any" min="1" required>
+                            <input id="costo" name="Costo" type="number" placeholder="Costo" class="form-control" step="any" min="1" required>
                                 <!--<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>--->
                         </div>
                     </div>
                      <!--buscar como generar un codigo por javascript y colocarlo dentro del input-->
                     <div class=" form-group" id="Factura">
                         <div class="input-group-append col-auto text-center">
-                              <input id="Facturar" name="Factura" type="text" placeholder="Codigo.factura.generado" class="form-control" >
-                              <button id="demo" name = "Generador" type="button" class=" btn button">Generar</button>
+                              <input id="Facturar" name="Factura" type="text" placeholder="Codigo.factura.generado" class="form-control" required >
+                              <button id="demo" name = "Generador" type="button" class=" btn btn-dark btn-sm">Generar</button>
                           <!--<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>-->
                         </div>
                     </div>

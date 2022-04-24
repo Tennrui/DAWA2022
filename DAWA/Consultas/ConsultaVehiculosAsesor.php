@@ -82,7 +82,7 @@
                 echo"</thead>";
                 while($fila = mysqli_fetch_assoc($resultado)){
                     echo "<tr >";
-                    echo "<td>".$fila['Num_serie' ]."</td>";
+                    echo "<td>".$fila['num_serie']."</td>";
                     echo "<td>".$fila['marca_vehiculo']."</td>";
                     echo "<td>".$fila['color_vehiculo']."</td>";
                     echo "<td>".$fila['precio_vehiculo']."</td>";

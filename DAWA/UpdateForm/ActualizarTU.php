@@ -1,6 +1,6 @@
 <script type="text/javascript">
  function MiFuncionJS(){ 
-    alert('Insertado con éxito');
+    alert('Actualizado con exito');
     history.back();
     }
 </script>

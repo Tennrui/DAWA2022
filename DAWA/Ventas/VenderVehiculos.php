@@ -8,20 +8,19 @@
 <!------ Include the above in your HEAD tag ---------->
 <script type="text/javascript">
 window.addEventListener("load", cargaPagina);
-function cargaPagina() {
-    var btn = document.getElementById("demo").addEventListener("click", cambiaValores);
-}
-
-function cambiaValores() {
-    var inputNombre = document.getElementById("Facturar");
-    var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
-    var contraseña = "";
-    for (i=0; i<20; i++){
-        contraseña +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
+    function cargaPagina() {
+        var btn = document.getElementById("demo").addEventListener("click", cambiaValores);
     }
-    inputNombre.value = contraseña;
-    document.getElementById("demo").style.color = "red";
-}
+    function cambiaValores() {
+        var inputNombre = document.getElementById("Facturar");
+        var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+        var contraseña = "";
+        for (i=0; i<20; i++){
+            contraseña +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
+        }
+        inputNombre.value = contraseña;
+        document.getElementById("demo").style.color = "red";
+    }
 </script>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,14 +54,15 @@ function cambiaValores() {
                     data: {"id":i},
                     dataType: "json",
                     success: function(data){
-                    var color = data[0];
-                    var costo = data[1];
-                   // alert(cantidad);
+                    var num_Serie = data[0];
+                    var color = data[1];
+                    var costo = data[2];
+                   
+                  
+                    $('#num_Serie').val(num_Serie);
                     $('#color').val(color);
                     $('#costo').val(costo);
 
-                    
-    
                     }
                     
                 });//fin ajax
@@ -117,7 +117,7 @@ function cambiaValores() {
                     echo"<div class='form-row justify-content-center h-100'>";
                     echo"<div class='card input'>";
                     echo"<div class='well well-sm card-body'>";
-                    echo"<form action='ActulizarTP.php' class='form-horizontal' method='post'>";
+                    echo"<form action='../UpdateForm/ActualizarTV.php' class='form-horizontal' method='post'>";
                     echo"<div class='form-group mb-3 '>";
                     echo"<div class='col-auto text-center'>";   
                     echo "<select required class='form-control' id='id' name = 'id'>";
@@ -138,6 +138,12 @@ function cambiaValores() {
             ?>
         
                             </select>
+                        </div>
+                    </div>
+                    <div class=" form-group" id="Num_Serie">
+                        <div class="input-group-append col-auto text-center">
+                                <input id="num_Serie" name="num_Serie" type="text" placeholder="N_Serie" class="form-control" required>
+                                <!--<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>-->
                         </div>
                     </div>
                     <div class=" form-group" id="Color">
@@ -163,7 +169,7 @@ function cambiaValores() {
                     <div class=" form-group" id="Factura">
                         <div class="input-group-append col-auto text-center">
                               <input id="Facturar" name="Factura" type="text" placeholder="Codigo.factura.generado" class="form-control" >
-                              <input id ="demo" name = "Generador" value="Generar" type="button" class=" btn button">
+                              <input id ="demo" name = "Generador" value="Generar" type="button" class=" btn btn-dark btn-sm">
                           <!--<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>-->
                         </div>
                     </div>
