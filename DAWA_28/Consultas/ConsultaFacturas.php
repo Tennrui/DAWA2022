@@ -78,14 +78,13 @@
                 echo"<div class='table-responsive-lg'>";
                 echo "<table border= '2' class='table table-hover table-dark text-center'>";
                 echo "<thead>";
-                echo "<tr><th>Id de la factura</th><th>Codigo de Factura</th><th>Fecha de factura</th><th>Email</th><th>Nombre del cliente</th>";
+                echo "<tr><th>Id de la factura</th><th>Fecha de factura</th><th>Costo total</th><th>Nombre del cliente</th>";
                 echo"</thead>";
                 while($fila = mysqli_fetch_assoc($resultado)){
                     echo "<tr >";
                     echo "<td>".$fila['id_factura']."</td>";
-                    echo "<td>".$fila['codigo_factura']."</td>";
                     echo "<td>".$fila['fecha_factura']."</td>";
-                    echo "<td>".$fila['Email']."</td>";
+                    echo "<td>".$fila['costo_total']."</td>";
                     echo "<td>".$fila['nom_cliente']."</td>";
                     echo "</tr>";
                 }

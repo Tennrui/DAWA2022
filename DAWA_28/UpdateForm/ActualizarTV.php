@@ -35,7 +35,7 @@
             //Ejecutar la consulta
             $resultado = mysqli_query($conn,$query) or die ("Error:No se pudo ejecutar la consulta 1");
             //Consulta SQL que muestra el contenido de una tabla
-            $query = "INSERT INTO ventas(id_pieza,Num_serie,cantidad_producto,costo_unitario,id_factura) VALUE ('$marca_vehiculo','$num_serie','$cantidad','$costo','$codigo_f')";
+            $query = "INSERT INTO facturas(id_factura,fecha_factura,costo_total) VALUE ('$codigo_f','$fecha','$costo_total')";
             //Ejecutar la consulta
             $resultado = mysqli_query($conn,$query) or die ("Error:No se pudo ejecutar la consulta 2");
             echo "<script>";

@@ -1,0 +1,5 @@
+MiFuncionJS()
+
+{  alert (" EXITO")}
+
+</script >

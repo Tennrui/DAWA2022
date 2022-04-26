@@ -1,13 +1,14 @@
 <script type="text/javascript">
  function MiFuncionJS(){ 
-    alert('Insertado con éxito');
+    alert('Usuario registrado con éxito');
     history.back();
     }
 </script>
 
 <?php
     if(isset($_POST['Registrar'])){
-        $Nombre = $_POST['name'];
+        $Nombre = $_POST['name_a'];
+        $tipo = $_POST['tipo'];
         $psw = $_POST['password'];
         $email = $_POST['email'];
 
@@ -15,13 +16,12 @@
         $user = "user1";
         $pass = "12345";
         $basedatos = "ag_autos";
-        if($Nombre != "" || $psw != "" || $email != ""){
+        if($Nombre != "" || $psw != "" || $email != "" || $tipo != ""){
             //Conectar al manejador de BD
             $conn = mysqli_connect($server, $user, $pass) or die("Error: No se pudo conectar");
             //establecer conexion con BD
             mysqli_select_db($conn, $basedatos) or die("Error no se ha encontrado la base de datos");
-            //Consulta SQL que muestra el contenido de una tabla
-             //Verificar si el usuario ya existe
+            //Verificar si el usuario ya existe
             $query = "SELECT * FROM usuarios WHERE nombre_usuario ='$Nombre'";
             $resultado = mysqli_query($conn,$query) or die ("Error: ¡Usuario ya existente!");
             $num_registros = mysqli_num_rows($resultado);
